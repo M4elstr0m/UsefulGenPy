@@ -1,0 +1,38 @@
+1. Create a setup.py and add the following code :
+
+from setuptools import setup
+
+setup(
+    name='usefulgen',
+    version='1.0',
+    packages=['usefulgen'],
+    install_requires=[],
+    author='Your Name',
+    author_email='your_email@example.com',
+    description='A brief description of your package',
+    url='https://github.com/your-username/usefulgen',  # Optional
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',  # Choose a license
+    ],
+)
+
+
+2. Create a source distribution
+
+python setup.py sdist
+
+3. Create a wheel distribution
+
+python setup.py bdist_wheel
+
+(4. Install twine if not installed)
+
+pip install twine
+
+5. Upload your package (you must have a PyPi.org account with 2FA and an API Token)
+
+twine upload dist/*
+
+
+You're done!
