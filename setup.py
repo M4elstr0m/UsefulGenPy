@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='usefulgen',
-    version='1.0.1.0',
-    packages=['usefulgen'],
+    version='1.0.1.1',
+    packages=find_packages(),
     description='A Python script containing some must-have generators',
     install_requires=['typing'],
     author='M4elstr0m',
