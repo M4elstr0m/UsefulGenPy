@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='usefulgen',
-    version='1.0',
+    version='1.0.0',
     packages=['usefulgen'],
     install_requires=['typing'],
     author='M4elstr0m',
