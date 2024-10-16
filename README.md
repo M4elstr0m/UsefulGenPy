@@ -29,10 +29,15 @@ If you don't have **pip** installed yet, just type the command ```py -m ensurepi
   <tr>
     <td>Basic time-saving generators from numbers to strings</td>
     <td>✅</td>
-    <td>v1.0</td>
+    <td>v1.0.1.1</td>
   </tr>
   <tr>
     <td>Wordlists generators</td>
+    <td>✅</td>
+    <td>v1.0.2</td>
+  </tr>
+  <tr>
+    <td>Email Address generator</td>
     <td>🚧</td>
     <td>v1.?</td>
   </tr>
