@@ -15,6 +15,7 @@ pip3 install usefulgen
 ```
 
 <br>
+
 If you don't have **pip** installed yet, just type the command ```py -m ensurepip --upgrade```
 
 ## 🧩 Features
