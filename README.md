@@ -39,7 +39,7 @@ If you don't have **pip** installed yet, just type the command ```py -m ensurepi
   <tr>
     <td>Email Address generator</td>
     <td>🚧</td>
-    <td>v1.?</td>
+    <td>v1.0.?</td>
   </tr>
 </table>
 </div>

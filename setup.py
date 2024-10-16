@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='usefulgen',
-    version='1.0.1.1',
+    version='1.0.2',
     packages=find_packages(),
     description='A Python script containing some must-have generators',
     install_requires=['typing'],
