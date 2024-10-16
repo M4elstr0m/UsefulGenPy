@@ -37,4 +37,3 @@ If you don't have **pip** installed yet, just type the command ```py -m ensurepi
   </tr>
 </table>
 </div>
-OK
