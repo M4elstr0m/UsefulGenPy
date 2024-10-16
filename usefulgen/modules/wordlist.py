@@ -37,7 +37,7 @@ def Wordlist(*, charset:str=None ,length:int=None, show_amount_combinations:bool
     elif charset is not None:
         if not isinstance(charset, str):
             raise TypeError(f"Expected string, received {charset}")
-    if show_amount_combinations is not None and not isinstance(show_amount_combinations, bool):
+    elif show_amount_combinations is not None and not isinstance(show_amount_combinations, bool):
         raise TypeError(f"Expected boolean type as show_amount_combinations, received \'{show_amount_combinations}\'")
 
     # Is used only if charset is not None-type
@@ -66,7 +66,7 @@ def Wordlist(*, charset:str=None ,length:int=None, show_amount_combinations:bool
 
     if show_amount_combinations:
         if length is None:
-            print(f"Generating {len(lcharset)**len(lcharset)} combinations...")
+            print(f"Generating {len(lcharset)**len(charset)} combinations...")
         else:
             print(f"Generating {len(lcharset)**length} combinations...")
     
