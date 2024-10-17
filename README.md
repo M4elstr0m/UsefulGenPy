@@ -1,5 +1,5 @@
 # UsefulGenPy
-A Python script containing some must-have generators
+A Python Module containing time-saving generators. The code as got a lot of Docstrings don't hesitate to check those if needed.
 
 <br>
 
@@ -35,6 +35,11 @@ If you don't have **pip** installed yet, just type the command ```py -m ensurepi
     <td>Wordlists generators</td>
     <td>✅</td>
     <td>v1.0.2</td>
+  </tr>
+  <tr>
+    <td>Prefixes/Suffixes on Wordlists output</td>
+    <td>✅</td>
+    <td>v1.0.3</td>
   </tr>
   <tr>
     <td>Email Address generator</td>

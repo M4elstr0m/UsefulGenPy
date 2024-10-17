@@ -2,12 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='usefulgen',
-    version='1.0.2',
+    version='1.0.3',
     packages=find_packages(),
-    description='A Python script containing some must-have generators',
+    description='Python Module dedicated to time-saving generators, made by M4elstr0m',
     install_requires=['typing'],
     author='M4elstr0m',
-    long_description='A Python module containing some must-have generators\nFor more details, don\'t hesitate to go on https://github.com/M4elstr0m/UsefulGenPy',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     url='https://github.com/M4elstr0m/UsefulGenPy',
     download_url='https://pypi.org/project/usefulgen/',
     classifiers=[
