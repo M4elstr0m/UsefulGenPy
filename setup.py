@@ -13,6 +13,9 @@ setup(
     download_url='https://pypi.org/project/usefulgen/',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',  # Choose a license
+        'License :: OSI Approved :: MIT License', 
     ],
 )
+
+#python setup.py sdist bdist_wheel
+#twine upload dist/*
