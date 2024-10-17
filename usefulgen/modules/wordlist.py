@@ -6,7 +6,7 @@ def Wordlist(charset:str ,length:int, *, strict:bool=False, show_amount_combinat
     """
     Generates a huge amount of strings combinations of a given length using a given charset, will use only the chars from the charset (if strict=True) or their type (if strict=False)
     \n
-    Examples of usage:
+    Usage example:
     \n
     Wordlist("H",3, strict=False) --> First combination: AAA | Last combination: ZZZ | Other combination: OAL
     \n
@@ -41,6 +41,14 @@ def Wordlist(charset:str ,length:int, *, strict:bool=False, show_amount_combinat
         raise TypeError(f"Expected boolean type as strict, received \'{strict}\'")
     elif show_amount_combinations is not None and not isinstance(show_amount_combinations, bool):
         raise TypeError(f"Expected boolean type as show_amount_combinations, received \'{show_amount_combinations}\'")
+    
+    if strict: #checks for double entries
+        chars:list = []
+        for letter in charset:
+            if letter not in chars:
+                chars.append(letter)
+        charset = str(''.join(chars))
+        del chars
 
     def __DefineCharset(string:str) -> list:
         local_charset:list = []
@@ -72,3 +80,38 @@ def Wordlist(charset:str ,length:int, *, strict:bool=False, show_amount_combinat
         if combination not in already_yield:
             already_yield.append(combination)
             yield ''.join(combination)
+
+
+def WordlistWithKnownParts(charset:str ,length:int, prefix:str=None, suffix:str=None, *, strict:bool=False, show_amount_combinations:bool=False) -> Generator[str, None, None]:
+    """
+    Same as Wordlist() but adds a suffix or/and a prefix to the output
+    \n
+    Refer to Wordlist() function's docstring for a complete docstring
+    \n
+    Usage example:
+    \n
+    WordlistWithKnownParts("johndoe", 4, "123", "!", strict=True) --> First combination: "123jjjj!" | Last combination: "123eeee!"
+    \n
+    WordlistWithKnownParts("john.doe", 5, None, "@gmail.com", strict=True) --> First combination: "jjjjj@gmail.com" | Last combination: "eeeee@gmail.com"
+    
+    :param: Please refer to Wordlist() docstring for the other parameters
+    :param prefix: A prefix that will be added to each output
+    :type prefix: str, optional
+    :param suffix: A suffix that will be added to each output
+    :type suffix: str, optional
+    :raises TypeError: If suffix and prefix parameters are both empty
+    :raises TypeError: If suffix or prefix are not strings (if not empty)
+    :return: A generator yielding words with prefixes or/and suffixes
+    :rtype: Generator[str]
+    """
+    if suffix is None and prefix is None:
+        raise TypeError(f"A suffix or a prefix must be given (or both)")
+    if suffix is None:
+        suffix = ""
+    elif prefix is None:
+        prefix = ""
+    if not isinstance(suffix, str) and not isinstance(prefix, str):
+        raise TypeError(f"Expected strings as suffix or prefix")
+
+    for combination in Wordlist(charset=charset, length=length, strict=strict, show_amount_combinations=show_amount_combinations):
+            yield str(prefix+combination+suffix)
