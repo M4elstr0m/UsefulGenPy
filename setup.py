@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='usefulgen',
-    version='1.0.3',
+    version='1.0.3.1',
     packages=find_packages(),
     description='Python Module dedicated to time-saving generators, made by M4elstr0m',
     install_requires=['typing'],

@@ -1,2 +1,3 @@
 # https://github.com/M4elstr0m/
-__all__ = ['basic', 'wordlist']
+from .modules.basic import *
+from .modules import wordlist
