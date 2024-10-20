@@ -109,6 +109,8 @@ def EmailGenerate(
                 AlreadyYield.append(lastname+firstname+do)
                 yield lastname+firstname+do
 
+                ### can have whitespaces instead of \t 
+                ### for loop to reverse lastname and firstname
                 ### sort depending on if lastname is the first one or if it is firstname in first
                 yield lastname+"."+firstname+do
                 yield lastname+"_"+firstname+do
