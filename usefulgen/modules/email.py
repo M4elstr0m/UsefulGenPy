@@ -99,17 +99,22 @@ def EmailGenerate(
             if firstname+"_"+lastname+do not in AlreadyYield:
                 AlreadyYield.append(firstname+"_"+lastname+do)
                 yield firstname+"_"+lastname+do
-            if firstname+"_"+lastname+do not in AlreadyYield:
+            if firstname+do not in AlreadyYield:
+                AlreadyYield.append(firstname+do)
+                yield firstname+do
+            if firstname+"-"+lastname+do not in AlreadyYield:
+                AlreadyYield.append(firstname+"-"+lastname+do)
+                yield firstname+"-"+lastname+do
+            if lastname+firstname+do not in AlreadyYield:
                 AlreadyYield.append(lastname+firstname+do)
                 yield lastname+firstname+do
 
                 ### sort depending on if lastname is the first one or if it is firstname in first
                 yield lastname+"."+firstname+do
                 yield lastname+"_"+firstname+do
-                yield firstname+do
                 yield lastname+do
                 yield lastname+"-"+firstname+do
-                yield firstname+"-"+lastname+do
+                
                 
 
 if __name__ == "__main__": #to delete
